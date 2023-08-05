@@ -1,0 +1,75 @@
+.line {
+  width: 1px;
+  background-color: #dee2e6;
+}
+
+textarea {
+  resize: none;
+}
+label {
+  text-wrap: wrap;
+}
+
+#comment {
+  height: 100%;
+}
+
+.form-floating>label {
+  color: #9d9d9d;
+}
+
+#country.ng-pristine + label {
+  transform: none!important;
+}
+
+.user-info .form-floating>label {
+  left: 12px;
+}
+
+.btn-primary {
+  width: 350px;
+}
+
+.thanks {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-danger {
+  margin-top: 5px;
+}
+
+#country.ng-pristine + label {
+  transform: none!important;
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-dirty,
+select.ng-invalid.ng-touched
+{
+  border-color: red;
+}
+
+input.ng-invalid.ng-dirty + label,
+input.ng-invalid.ng-touched + label,
+select.ng-invalid.ng-dirty + label,
+select.ng-invalid.ng-touched + label,
+{
+  color: red;
+}
+
+.error-text {
+  display: none;
+  color: red;
+}
+
+input.ng-invalid + div {
+  display: block;
+}
+
+.hide-form {
+  height: 70vh;
+}

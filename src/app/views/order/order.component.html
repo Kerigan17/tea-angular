@@ -1,0 +1,118 @@
+<div *ngIf="showForm" class="col-md-7 col-lg-6 mx-auto mt-5 pt-4 wow animate__fadeInRight hide-form">
+  <h2 class="mb-5 text-center">Сделать заказ</h2>
+  <form id="my-form" class="needs-validation validate d-flex gap-5 pt-5"
+        [formGroup]="sendFormGroup"
+        (ngSubmit)="sendForm()">
+    <div class="w-25 gap-3 d-flex flex-column">
+      <div class="h4">Заказ</div>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="product" placeholder="" name="product"
+               formControlName="product" readonly>
+        <label for="product">Продукт</label>
+      </div>
+      <div class="form-floating">
+        <textarea type="text" class="form-control" id="comment" placeholder="" cols="30" rows="8" name="comment"
+                  formControlName="comment"></textarea>
+        <label for="comment">Комментарий к заказу</label>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="row g-4 w-75 user-info">
+      <div class="h4">Информация для доставки</div>
+
+      <div class="form-floating col-sm-4">
+        <input type="text" class="form-control" id="name" placeholder="" name="name"
+               required
+               formControlName="name">
+        <label for="name">Имя</label>
+        <div class="error-text">Введите имя</div>
+        <div class="text-danger" *ngIf="name.dirty || name.touched">
+          <div *ngIf="name.errors?.['required']">
+            Заполните поле
+          </div>
+          <div *ngIf="name.errors?.['pattern']">
+            Пример: Alex
+          </div>
+        </div>
+      </div>
+
+      <div class="form-floating col-sm-4">
+        <input type="text" class="form-control" id="last_name" placeholder="" name="last_name"
+               formControlName="last_name">
+        <label for="last_name">Фамилия</label>
+        <div class="text-danger" *ngIf="last_name.dirty || last_name.touched">
+          <div *ngIf="last_name.errors?.['required']">
+            Заполните поле
+          </div>
+          <div *ngIf="last_name.errors?.['pattern']">
+            Пример: Jonson
+          </div>
+        </div>
+      </div>
+
+      <div class="form-floating col-sm-4">
+        <input type="number" class="form-control" id="phone" placeholder="" name="phone"
+               formControlName="phone">
+        <label for="phone">Телефон</label>
+        <div class="text-danger" *ngIf="phone.dirty || phone.touched">
+          <div *ngIf="phone.errors?.['required']">
+            Заполните поле
+          </div>
+          <div *ngIf="phone.errors?.['pattern']">
+            11 символов
+          </div>
+        </div>
+      </div>
+
+      <div class="form-floating col-sm-6">
+        <select id="country" name="country" class="form-control" formControlName="country">
+          <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+        </select>
+        <label for="country">Страна</label>
+        <div class="text-danger" *ngIf="country.errors?.['required'] && (country.dirty || country.touched)">
+            Заполните поле
+        </div>
+      </div>
+
+      <div class="form-floating col-sm-6">
+        <input type="number" class="form-control" id="zip" placeholder="" name="zip"
+               formControlName="zip">
+        <label for="zip">Индекс</label>
+        <div class="text-danger" *ngIf="zip.invalid && (zip.dirty || zip.touched)">
+          Заполните поле
+        </div>
+      </div>
+
+      <div class="form-floating col-sm-12">
+        <input type="text" class="form-control" id="address" placeholder="" name="address"
+               formControlName="address">
+        <label for="address">Адрес</label>
+        <div class="text-danger" *ngIf="address.dirty || address.touched">
+          <div *ngIf="address.errors?.['required']">
+            Заполните поле
+          </div>
+          <div *ngIf="address.errors?.['pattern']">
+            буквы, цифры, пробелы, тире и слеш
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <div class="d-flex flex-column align-items-center">
+          <button class="px-5 btn btn-primary btn-lg mt-4 submit hvr-buzz-out" type="submit" (click)="sendForm()"
+                  [disabled]="sendFormGroup.invalid || sendFormGroup.disabled">
+            Отправить
+          </button>
+          <div *ngIf="error" class="text-danger">Произошла ошибка. Попробуйте еще раз</div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="showFThanks" class="thanks p-5 m-5">
+  <h2 class="thanks-text text-center">Спасибо за заказ. Мы свяжемся с вами в ближайшее время!</h2>
+</div>
+

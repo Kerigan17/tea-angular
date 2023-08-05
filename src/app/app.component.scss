@@ -1,0 +1,67 @@
+.slick-arrow {
+  z-index: 1;
+}
+
+.slick-prev {
+  left: 20px;
+}
+
+.slick-next {
+  right: 20px;
+}
+
+.ui-icon {
+  order: 1;
+  font-size: 25px;
+  stroke: white;
+  width: 20px;
+}
+
+.form-item {
+  position: relative;
+}
+
+.invalid-feedback {
+  position: absolute;
+  top: 65px;
+}
+
+.error {
+  color: red;
+}
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+
+.mfp-hide {
+  width: 500px;
+}
+
+.slick-arrow {
+  width: 35px;
+  height: 35px;
+}
+.slick-arrow:before {
+  font-size: 35px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+img.mfp-img {
+  width: 100%;
+}
+
+.mfp-image-holder .mfp-content {
+  width: 90%;
+}
+
+.active {
+  display: block !important;
+}

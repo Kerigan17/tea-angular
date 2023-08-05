@@ -1,0 +1,94 @@
+.card-image {
+  width: 100%;
+}
+.line {
+  width: 1px;
+  background-color: #dee2e6;
+}
+
+textarea {
+  resize: none;
+}
+
+#description {
+  height: 100%;
+}
+
+.form-floating>label {
+  color: #9d9d9d;
+}
+
+.user-info .form-floating>label {
+  left: 12px;
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-dirty,
+select.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+input.ng-invalid.ng-dirty + label,
+input.ng-invalid.ng-touched + label,
+select.ng-invalid.ng-dirty + label,
+select.ng-invalid.ng-touched + label,
+{
+  color: red;
+}
+
+
+.ui-accordion-header {
+  border-radius: 10px;
+  padding: 2em;
+  position: relative;
+  background: linear-gradient(360deg, #076BFF 0%, #007BFF 100%);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ui-accordion .ui-accordion-header{
+  cursor:pointer;
+  position:relative;
+  padding: 25px 23px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.ui-accordion-content {
+  border: none;
+}
+
+#modalSheet {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.ui-accordion-content {
+  border: none;
+}
+
+.ui-icon {
+  order: 1;
+  font-size: 25px;
+  stroke: white;
+  width: 20px;
+}
+
+.ui-icon.iconOpen {
+  background: url('/assets/images/arrow-up.png') no-repeat;
+}
+
+.ui-icon.iconClosed {
+  background: url('/assets/images/arrow-down.png') no-repeat;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

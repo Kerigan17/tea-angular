@@ -1,0 +1,18 @@
+<div class="d-flex ms-5 me-5 ps-5 pe-5 gap-5 align-items-center">
+  <div class="w-50">
+    <img [src]="product.image" class="card-image" alt="Продукт">
+  </div>
+  <div class="w-50">
+    <div>
+      <h2 class="card-title mb-5 mt-5">{{product.title}}</h2>
+      <p class="card-text">{{product.description}}</p>
+    </div>
+    <div class="mt-5 d-flex gap-5 align-items-center">
+      <p class="h4">{{product.price}} руб.</p>
+      <a routerLink="/order" [queryParams]="{title: product.title}" type="button" class="btn btn-sm btn-outline-primary px-5 hvr-wobble-horizontal h4" (click)="orderProduct(product.title)">
+        купить
+      </a>
+    </div>
+  </div>
+</div>
+
